@@ -22,19 +22,19 @@ This repository contains **Dockerfile** of [TokuMX](http://www.tokutek.com/produ
 
 #### Run `mongod`
 
-    docker run -d -p 27017:27017 --name mongodb dockerfile/mongodb
+    docker run -d -p 27017:27017 --name mongodb ankurcha/tokumx
 
 #### Run `mongod` w/ persistent/shared directory
 
-    docker run -d -p 27017:27017 -v <db-dir>:/data/db --name mongodb dockerfile/mongodb
+    docker run -d -p 27017:27017 -v <db-dir>:/data/db --name mongodb ankurcha/tokumx
 
 #### Run `mongod` w/ HTTP support
 
-    docker run -d -p 27017:27017 -p 28017:28017 --name mongodb dockerfile/mongodb mongod --rest --httpinterface
+    docker run -d -p 27017:27017 -p 28017:28017 --name mongodb ankurcha/tokumx mongod --rest --httpinterface
 
 #### Run `mongo`
 
-    docker run -it --rm --link mongodb:mongodb dockerfile/mongodb bash -c 'mongo --host mongodb'
+    docker run -it --rm --link mongodb:mongodb ankurcha/tokumx bash -c 'mongo --host mongodb'
 
 ##### Usage with VirtualBox (boot2docker-vm)
 
